@@ -123,7 +123,8 @@ button {
   bottom: 0;
   background-color: var(--clr-primary);
   /* transition: */
-  transition: width, 10s, ease-in;
+  transition: width, 1s;
+  transition-timing-function: ease-in-out;
 }
 
 .link:hover::before,
