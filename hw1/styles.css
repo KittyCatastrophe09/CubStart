@@ -123,7 +123,7 @@ button {
   bottom: 0;
   background-color: var(--clr-primary);
   /* transition: */
-  transition: width, 1s;
+  transition: width, 0.5s;
   transition-timing-function: ease-in-out;
 }
 
@@ -227,7 +227,7 @@ button {
   width: 95%;
   margin: 0 auto;
   /* justify-content: */
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 /* END PART 3 */
