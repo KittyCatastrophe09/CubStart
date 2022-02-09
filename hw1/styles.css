@@ -123,6 +123,7 @@ button {
   bottom: 0;
   background-color: var(--clr-primary);
   /* transition: */
+  transition: width, 10s, ease-in;
 }
 
 .link:hover::before,
@@ -214,6 +215,9 @@ button {
 /* BEGIN PART 3 */
 
 .center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .header {
@@ -222,6 +226,7 @@ button {
   width: 95%;
   margin: 0 auto;
   /* justify-content: */
+  justify-content: space-around;
 }
 
 /* END PART 3 */
@@ -259,6 +264,8 @@ main {
 /* BEGIN PART 7 */
 
 .about {
+  margin-top: auto;
+  flex-direction: column;
 }
 
 /* END PART 7 */
@@ -295,6 +302,9 @@ main {
   max-width: 1100px;
   margin: 0 auto;
   /* display: */
+  display: -moz-grid-group;
+  grid-template-columns: repeat(auto-fit, calc(100% / 3 - 10px * 2 / 3));
+  grid: gap 3px;
   /* grid-template-columns: */
   /* grid-gap: */
 }

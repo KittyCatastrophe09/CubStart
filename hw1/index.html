@@ -45,7 +45,7 @@
 
       <!-- 
         5.1: What does this button tag correspond to on the site? 
-      
+        Toggling between dark and light theme
       
       -->
 
@@ -58,7 +58,7 @@
         appears in 2 places. Why is one of the rules 'display: none' on one instance? How do you
         make it so that this button appears on screen? 
         Hint: remember what @media (max-width: 600px) means.
-
+        Because it's not being displayed unless it's clicked. You click the element and they switch.
 
        -->
 
@@ -69,6 +69,15 @@
   <main>
     <div class="about center">
       <!-- BEGIN PART 6 -->
+      <h1 tag = span>
+        Hi, I'm <span class="about_name">Kira</span> 
+      </h1>
+      <h2 class = "about_role">
+          My Role
+      </h2>
+      <p class = "about_desc">
+          About me
+      </p>
       <!-- END PART 6 -->
       <div class="about__contact center">
         <a href="https://example.com">
@@ -108,6 +117,26 @@
             <i aria-hidden="true" class="fas fa-external-link-alt"></i>
           </a>
         </div>
+        <div class="project">
+          <h3>Project 2</h3>
+          <p class="project__description">
+            Ipsum accusamus ea excepturi aliquid eligendi amet. Explicabo
+            sapiente debitis labore sed ipsam Mollitia repellat illum quod
+            unde beatae Quis
+          </p>
+          <ul class="project__stack">
+            <li class="project__stack-item">Python</li>
+            <li class="project__stack-item">Java</li>
+            <li class="project__stack-item">JavaScript</li>
+          </ul>
+
+          <a href="https://github.com" aria-label="source code" class="link link--icon">
+            <i aria-hidden="true" class="fab fa-github"></i>
+          </a>
+          <a href="https://example.com" aria-label="live preview" class="link link--icon">
+            <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
         <!-- END PART 8 -->
       </div>
     </section>
@@ -117,9 +146,9 @@
       <!-- BEGIN PART 10 -->
       <h2 class="section__title">Skills</h2>
       <ul class="skills__list">
-        <li class="skills__list-item btn btn--plain"></li>
-        <li class="skills__list-item btn btn--plain"></li>
-        <li class="skills__list-item btn btn--plain"></li>
+        <li class="skills__list-item btn btn--plain"></Canva>
+        <li class="skills__list-item btn btn--plain"></Python>
+        <li class="skills__list-item btn btn--plain"></Java>
       </ul>
       <!-- END PART 10 -->
     </section>
@@ -134,7 +163,7 @@
   <footer class="footer">
     <!-- BEGIN PART 12 -->
     <a href="/" class="link footer__link">
-      Created By Your Name
+      This Webpage was created By Kira Cope
     </a>
     <!-- END PART 12 -->
   </footer>
