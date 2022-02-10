@@ -305,7 +305,7 @@ main {
   /* display: */
   display: -moz-grid-group;
   grid-template-columns: repeat(auto-fit, calc(100% / 3 - 10px * 2 / 3));
-  grid: gap 3px;
+  grid: gap 10px;
   /* grid-template-columns: */
   /* grid-gap: */
 }
