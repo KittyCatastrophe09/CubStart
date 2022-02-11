@@ -227,7 +227,7 @@ button {
   width: 95%;
   margin: 0 auto;
   /* justify-content: */
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 /* END PART 3 */
@@ -267,6 +267,7 @@ main {
 .about {
   margin-top: auto;
   flex-direction: column;
+  text-align: center;
 }
 
 /* END PART 7 */
