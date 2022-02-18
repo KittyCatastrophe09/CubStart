@@ -1,0 +1,22 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+
+
+#bored-button {
+  cursor: pointer;
+}
+
+#card {
+  background-color: lavender;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 10px;
+}
