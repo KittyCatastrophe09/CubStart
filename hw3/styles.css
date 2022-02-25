@@ -1,0 +1,72 @@
+html * {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+body {
+  background: rgb(255, 229, 67);
+  background: linear-gradient(
+    290deg,
+    rgba(255, 229, 67, 1) 0%,
+    rgba(255, 83, 238, 1) 100%
+  );
+}
+
+input[type="file"] {
+  display: none;
+}
+
+canvas {
+  position: relative;
+  margin-top: 30px;
+  text-align: center; 
+  z-index: 8; 
+}
+
+.custom-file-upload {
+  position: absolute;
+  top: -45px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+  top: 10%;
+  left: 25%;
+  height: 650px;
+  width: 700px;
+  border-radius: 15px;
+}
+
+#img {
+  position: absolute;
+  visibility: hidden;
+  margin-top: 30px;
+  max-height: 80%;
+  max-width: 90%;
+  border-radius: 15px;
+}
+
+#caption {
+  width: 90%; 
+}
+
+#caption > p {
+  margin: 0.25rem;
+  font-size: 1.5rem;
+}
+
+#watermark {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  font-size: 0.75rem;
+}
