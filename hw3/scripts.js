@@ -72,10 +72,8 @@ const getCaption = (predictions) => {
             const entry = data.definitions[0];
             let lineText;
             if (entry.example) {
-                console.log("entry.exp:" + entry.example)
                 lineText = entry.example;
             } else {
-                console.log("entry.def:" + entry.definition)
                 lineText = entry.definition;
             }
             if (entry.emoji) {
@@ -83,7 +81,6 @@ const getCaption = (predictions) => {
             }
             //hard coded extra options for the API
             if (entity) {
-                console.log("entity:" + entity)
                 if (entity === "cat") {
                     lineText += " meow meow"
                 } else if (entity === "bird") {
