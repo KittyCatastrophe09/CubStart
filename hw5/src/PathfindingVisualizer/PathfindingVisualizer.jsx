@@ -13,38 +13,82 @@ const PathfindingVisualizer = () => {
   // BEGIN PART 5
 
   // YOUR CODE HERE
+  const [grid, setGrid] = useState(getInitialGrid());
+  const [mouseIsPressed, setMouseIsPressed] = useState(false);
 
+  const handleMouseDown = (row, col) => {
+    const newGrid = getNewGridWithWallToggled(grid, row, col);
+    setGrid(newGrid);
+    setMouseIsPressed(true);
+  };
+
+  const handleMouseEnter = (row, col) => {
+    if (!mouseIsPressed) return;
+    const newGrid = getNewGridWithWallToggled(grid, row, col);
+    setGrid(newGrid);
+  };
+
+  const handleMouseUp = () => {
+    setMouseIsPressed(false);
+  };
   // END PART 5
 
   // BEGIN PART 6
+  
 
   const animateDijkstra = (visitedNodesInOrder, nodesInShortestPathOrder) => {
     for (let i = 0; i <= visitedNodesInOrder.length; i++) {
       // YOUR CODE HERE
+      if (i === visitedNodesInOrder.length) {
+        setTimeout(() => {
+          animateShortestPath(nodesInShortestPathOrder);
+        }, 10 * i);
+        return;
+      }
+      setTimeout(() => {
+        const node = visitedNodesInOrder[i];
+        document.getElementById(`node-${node.row}-${node.col}`).className =
+          "node node-visited";
+      }, 10 * i);
     }
   };
 
   const animateShortestPath = (nodesInShortestPathOrder) => {
     for (let i = 0; i < nodesInShortestPathOrder.length; i++) {
       // YOUR CODE HERE
+      setTimeout(() => {
+        const node = nodesInShortestPathOrder[i];
+        document.getElementById(`node-${node.row}-${node.col}`).className =
+          "node node-shortest-path";
+      }, 50 * i);
     }
   };
 
-  const visualizeDijkstra = () => {
-    // const startNode = YOUR CODE HERE
-    // const finishNode = YOUR CODE HERE
-    // const visitedNodesInOrder = dijkstra(grid, startNode, finishNode);
-    // const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
-    // animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
+  const visualizeDijkstra = (start1, start2, end1, end2) => {
+     const startNode = grid[start1][start2];
+     const finishNode = grid[end1][end2];
+     const visitedNodesInOrder = dijkstra(grid, startNode, finishNode);
+     const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
+     animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
   };
 
   return (
     <>
-      <button onClick={() => visualizeDijkstra()}>
+      <button onClick={() => visualizeDijkstra(START_NODE_ROW,START_NODE_COL,FINISH_NODE_ROW, FINISH_NODE_COL)}>
         Visualize Dijkstra's Algorithm
       </button>
+      <button onClick = {() => visualizeDijkstra(parseInt(document.getElementById('start1')), parseInt(document.getElementById('start2')), 
+      parseInt(document.getElementById('end1')), parseInt(document.getElementById('end2')))}>
+      Change Start and End
+      </button>
+      Start Coordinates (one in each box)
+      <input type="text" id="start1" />
+      <input type="text" id="start2" />
+      Finish Coordinates (one in each box)
+      <input type="text" id="finish1" />
+      <input type="text" id="finish2" />
       <div className="grid">
-        {/* {grid.map((row, rowIdx) => {
+        { grid.map((row, rowIdx) => {
           return (
             <div key={rowIdx}>
               {row.map((node, nodeIdx) => {
@@ -66,7 +110,7 @@ const PathfindingVisualizer = () => {
               })}
             </div>
           );
-        })} */}
+        })} 
       </div>
     </>
   );
@@ -88,7 +132,7 @@ const getInitialGrid = () => {
   return grid;
 };
 
-// YOUR ANSWER HERE
+// getInitialGrid creates an initial grid of nodes
 
 const createNode = (col, row) => {
   return {
@@ -103,7 +147,7 @@ const createNode = (col, row) => {
   };
 };
 
-// YOUR ANSWER HERE
+// createNode creates the nodes themselves
 
 const getNewGridWithWallToggled = (grid, row, col) => {
   const newGrid = grid.slice(); // Creates a shallow copy
@@ -113,10 +157,14 @@ const getNewGridWithWallToggled = (grid, row, col) => {
     isWall: !node.isWall,
   };
   newGrid[row][col] = newNode;
+  //scrapped tell user there is no sol.
+  if (newGrid[18][48].isWall && newGrid[18][49].isWall && newGrid[17][49].isWall) {
+    console.warn('No solution')
+  }
   return newGrid;
 };
 
-// YOUR ANSWER HERE
+// getNewGridWithWallToggled means creating a copy with walls not existing if they existed and existing if they didn't
 
 // END PART 4
 
