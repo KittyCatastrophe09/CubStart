@@ -10,6 +10,7 @@ To get this project up and running locally, follow the following steps.
 1. You must have [node](https://nodejs.dev) and [npm](https://www.npmjs.com) installed.
 2. Clone this project.
 3. Go wild.
+4. edit by Kira: start with npm run startdev
 
 
 ###### Made with love by [AMKS](https://amks.me). Reach out at [t.co/amksomani](https://twitter.com/amksomani). 
