@@ -1,0 +1,135 @@
+body {
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
+	overflow: scroll;
+  }
+  html {
+	height: -webkit-fill-available;
+  }
+
+* { 
+	margin: 0; 
+	padding: 0; 
+	box-sizing: border-box; 
+}
+
+body { 
+	font-family: 'Saira', sans-serif;
+	font-size: 15px;
+	padding: 20px;
+	background: #f1f1f1;
+	/* background: red; */
+	/* background: -webkit-gradient(linear, left top, right top, color-stop(0%, transparent), color-stop(50%,#fff), color-stop(100%,transparent)); Chrome, Safari4+ */
+}
+ 
+ 
+#intro {
+	color: #000;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* background:  -webkit-linear-gradient(bottom,  #818181, #cfcfcf); */
+	background: #cfcfcf;
+	margin-right: 20%;
+	margin-left: 20%;
+	box-shadow: 3px 5px 0px #111;
+	border-radius: 6px;
+	margin-bottom: 10px;
+	 /* height: 10%;	 */
+ } 
+ 
+form { 
+ 	/* background: #000000;  */
+ 	/* padding: 3px;  */
+	 position: fixed; 
+	 display: flex;
+	 /* justify-content: center; */
+ 	bottom: 35px; 
+	 width: 100%; 
+	 /* margin-left: 20%; */
+	 /* margin-right: 20%; */
+
+ }
+ 
+ form input { 
+	background-color: #cfcfcf;
+	/* border: 1px solid rgba(0, 0, 0, 0.205); */
+	border: none;
+	border-radius: 6px;
+	 padding: 10px; 
+	 margin-top: 40px;
+	width: 90%; 
+	 /* margin-right: 0.5%;  */
+	box-shadow: 4px 5px 0px 2px #111;
+	-webkit-box-shadow: 4px 5px 0px 2px #111;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	-moz-box-shadow:    4px 5px 0px 2px #111;  /* Firefox 3.5 - 3.6 */
+ }
+
+ form input::placeholder {
+	 font-family: 'Saira', sans-serif;
+	 color: #111;
+ }
+
+ form input:focus{
+	 outline: none;
+ }
+ 
+ /* form button { 
+ 	width: 5%; 
+ 	background: #00aaff;
+ 	border: 1px solid #0099e6; 
+	padding: 6px; 
+	border-radius: 6px;
+	color: #fff;
+ 	font-size: 1rem; 
+ } */
+ 
+ #messages { 
+	list-style-type: none;
+ 	margin: 0; 
+	 padding: 0; 
+	 height: 60vh;
+	 
+	 overflow: scroll;	
+ }
+
+ @media screen and (max-width: 600px) {
+	 form input {
+		bottom: 40px;
+	 }
+ }
+ 
+ #messages li { 
+	 padding: 5px 10px; 
+	 margin-bottom: 2px;
+	 margin-right: 20%;
+	 margin-left: 20%;
+ }
+
+ @media screen and (max-width: 600px) {
+	#messages li { 
+		margin-right: 0;
+		margin-left: 0;
+	}
+ }
+ 
+ #messages li:nth-child(odd) { 
+	 background: #d6d6d6; 
+	 border-radius: 4px;
+ }
+
+ #messages li:nth-child(even) { 
+	background: #353535; 
+	color: #fff;
+	border-radius: 4px;
+}
+
+
+#list{
+	text-align: right;
+}
+
+/* body {
+	background-color: linear-gradient(to top, #245edb 0%, #0c8dea 100%);
+} */
