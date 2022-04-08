@@ -10,12 +10,28 @@ const multer = require("multer");
 const path = require("path");
 
 // BEGIN PART 3
+dotenv.config()
+
+mongoose.connect(
+  process.env.MONGO_URL,
+  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
+  () => {
+    console.log("");
+  }
+);
 
 const app = express();
 
+app.use(express.json());
+app.use(helmet());
+app.use(morgan("common"));
+
 // "/api/auth"
+app.use("/api/auth", authRoute)
 // "/api/users"
+app.use("/api/users", userRoute)
 // "/api/posts"
+app.use("/api/posts", postRoute)
 
 // END PART 3
 

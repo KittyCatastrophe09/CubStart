@@ -8,8 +8,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { AuthContext } from "./context/AuthContext";
+import { AuthContext, AuthContextProvider } from "./context/AuthContext";
 import { useContext } from "react";
+
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -32,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export default AuthContextProvider(App);

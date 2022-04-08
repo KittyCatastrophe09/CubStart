@@ -5,6 +5,22 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema(
   {
     /* YOUR CODE HERE */
+    userId: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      max: 500,
+      required: true,
+    },
+    image: {
+      type: String,
+    },
+    likes: {
+      type: Array,
+      default: [],
+    }
   },
   { timestamps: true }
 );
